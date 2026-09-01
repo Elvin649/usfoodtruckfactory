@@ -1,0 +1,64 @@
+# ---------------------------------------------------------------------------
+# Publishes a preview of the site to GitHub Pages on every push to main.
+#
+# Pages is a static host: it will not run PHP. So this deliberately publishes
+# only the static half of the repository — the pages, the assets — and leaves
+# admin/ and api/ behind. Those two are for the real hosting, where PHP runs;
+# copying them here would put their source on a public URL for no benefit.
+#
+# The live site itself is NOT deployed from here. This is a preview link.
+# ---------------------------------------------------------------------------
+name: Preview on GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Never let two deploys race each other.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Collect the static site
+        run: |
+          mkdir _site
+          cp -- *.html _site/
+          cp -r assets _site/
+          touch _site/.nojekyll
+
+      - name: Send the forms to the mail fallback
+        # There is no api/submit.php on Pages. main.js reads "TODO" as
+        # "no endpoint configured" and hands the message to the visitor's
+        # mail client instead of posting into a 404.
+        run: sed -i 's|data-endpoint="api/submit.php"|data-endpoint="TODO"|g' _site/*.html
+
+      - name: Keep the preview out of search results
+        # The real domain must not have to compete with this copy for its own
+        # rankings, so the preview asks crawlers to stay away entirely.
+        run: printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
