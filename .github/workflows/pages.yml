@@ -42,12 +42,14 @@ jobs:
         # There is no api/submit.php on Pages. main.js reads "TODO" as
         # "no endpoint configured" and hands the message to the visitor's
         # mail client instead of posting into a 404.
-        run: sed -i 's|data-endpoint="api/submit.php"|data-endpoint="TODO"|g' _site/*.html
+        run: |
+          sed -i 's|data-endpoint="api/submit.php"|data-endpoint="TODO"|g' _site/*.html
 
       - name: Keep the preview out of search results
         # The real domain must not have to compete with this copy for its own
         # rankings, so the preview asks crawlers to stay away entirely.
-        run: printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
+        run: |
+          printf 'User-agent: *\nDisallow: /\n' > _site/robots.txt
 
       - uses: actions/upload-pages-artifact@v3
         with:
