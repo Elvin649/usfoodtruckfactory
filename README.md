@@ -250,14 +250,40 @@ Yoxlama nəticəsi: 9 səhifənin hamısı — **0 konsol xətası, 0 uğursuz s
 
 ## Lokal işə salmaq
 
-```bash
-python -m http.server 8000
-```
+`_tools/start-local.bat` faylına ikiqat klikləyin. PHP ilə xidmət edir, ona
+görə formlar və `/admin` paneli də real hostinqdəki kimi işləyir.
 
-Sonra brauzerdə `http://localhost:8000`.
+| | Ünvan |
+|---|---|
+| Sayt | `http://localhost:8000` |
+| Admin panel | `http://localhost:8000/admin/` |
 
-> `file://` ilə də açılır (ikonlar JS-ə daxil edilib, xaricdən yüklənmir), amma
-> lokal server daha düzgün nəticə verir.
+Dayandırmaq üçün pəncərəni bağlayın.
+
+> Yalnız görünüşə baxmaq üçün `python -m http.server 8000` da kifayətdir,
+> amma PHP olmadığı üçün form baza əvəzinə poçt proqramını açacaq.
+
+---
+
+## GitHub və önizləmə linki
+
+Repo: **https://github.com/Elvin649/usfoodtruckfactory**
+Önizləmə: **https://elvin649.github.io/usfoodtruckfactory/**
+
+`main`-ə hər push-dan sonra `.github/workflows/pages.yml` önizləməni
+avtomatik yeniləyir. Workflow **qəsdən** reponun yalnız statik yarısını
+dərc edir:
+
+- `admin/` və `api/` dərc olunmur — Pages PHP işlətmir, ona görə onlar orada
+  işləməyəcək, amma mənbə kodları açıq URL-də görünərdi
+- formların `data-endpoint` dəyəri `TODO`-ya çevrilir, yəni poçt proqramına
+  keçir — 404-ə post etmir
+- önizləmə öz `robots.txt`-i ilə gedir (`Disallow: /`), ki əsl domen Google-da
+  öz surəti ilə rəqabət aparmasın
+
+**`data/` heç vaxt commit olunmur.** `.gitignore` `config.php` (admin e-poçtu
+və bcrypt parol hash-i) və `*.sqlite` (bütün müraciətlər) fayllarını bloklayır.
+Hər server öz bazasını `admin/setup.php` ilə bir dəfə özü yaradır.
 
 ---
 
