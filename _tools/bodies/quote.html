@@ -1,0 +1,217 @@
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <svg class="icon" aria-hidden="true"><use href="#i-chevron-right"></use></svg>
+        <span>Get a Quote</span>
+      </nav>
+      <h1>Get a Free Quote</h1>
+      <p>
+        Tell us about the build you have in mind. The more detail you give us, the more accurate
+        your quote will be&mdash;and there is no obligation either way.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="split">
+
+        <div>
+          <h2 class="sr-only">Quote request form</h2>
+          <!-- Posts to api/submit.php, which stores the enquiry in data/submissions.sqlite.
+               Read them at /admin. The mailto action is the no-JavaScript fallback so the
+               form never posts to a dead URL. Requires PHP hosting; on a static-only host
+               set data-endpoint back to "TODO" and the form reverts to email. -->
+          <form class="form-card reveal" data-form novalidate
+                data-endpoint="api/submit.php"
+                action="mailto:info@usfoodtruckfactory.com"
+                method="post" enctype="text/plain">
+
+            <div class="form-grid">
+              <div class="field">
+                <label for="q-first">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="q-first" name="first_name" required autocomplete="given-name">
+                <p class="error" data-error-for="q-first" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="q-last">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="q-last" name="last_name" required autocomplete="family-name">
+                <p class="error" data-error-for="q-last" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="q-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="q-email" name="email" required autocomplete="email">
+                <p class="error" data-error-for="q-email" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="q-phone">Phone <span class="req" aria-hidden="true">*</span></label>
+                <input type="tel" id="q-phone" name="phone" required autocomplete="tel"
+                       placeholder="(240) 555-0100">
+                <p class="error" data-error-for="q-phone" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="q-type">What are you building? <span class="req" aria-hidden="true">*</span></label>
+                <select id="q-type" name="build_type" required>
+                  <option value="">Select a build type</option>
+                  <option>Custom food truck</option>
+                  <option>Concession trailer</option>
+                  <option>Ice cream / dessert truck</option>
+                  <option>Food cart</option>
+                  <option>Catering van</option>
+                  <option>Remodel of an existing unit</option>
+                  <option>Non-food mobile business</option>
+                </select>
+                <p class="error" data-error-for="q-type" role="alert"></p>
+              </div>
+
+              <div class="field">
+                <label for="q-vehicle">Do you have a vehicle?</label>
+                <select id="q-vehicle" name="vehicle">
+                  <option value="">Select one</option>
+                  <option>No &mdash; please source one for me</option>
+                  <option>Yes &mdash; I own it already</option>
+                  <option>Not yet, but I am shopping</option>
+                  <option>Not applicable (trailer or cart)</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="q-budget">Budget range</label>
+                <select id="q-budget" name="budget">
+                  <option value="">Select a range</option>
+                  <option>Under $25,000</option>
+                  <option>$25,000 &ndash; $50,000</option>
+                  <option>$50,000 &ndash; $85,000</option>
+                  <option>$85,000 &ndash; $125,000</option>
+                  <option>$125,000+</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="q-timeline">Target opening date</label>
+                <select id="q-timeline" name="timeline">
+                  <option value="">Select a timeline</option>
+                  <option>As soon as possible</option>
+                  <option>Within 3 months</option>
+                  <option>3 &ndash; 6 months</option>
+                  <option>6 &ndash; 12 months</option>
+                  <option>Just researching</option>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="q-state">Where will you operate?</label>
+                <input type="text" id="q-state" name="operating_state"
+                       placeholder="City and state" autocomplete="address-level2">
+              </div>
+
+              <div class="field">
+                <label for="q-financing">Interested in financing?</label>
+                <select id="q-financing" name="financing">
+                  <option value="">Select one</option>
+                  <option>Yes, please send details</option>
+                  <option>No, paying outright</option>
+                  <option>Maybe &mdash; tell me more</option>
+                </select>
+              </div>
+
+              <div class="field field--full">
+                <label for="q-message">Tell us about your build <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="q-message" name="message" required
+                          placeholder="What is on your menu? What equipment do you need? Any layout, branding or wrap ideas?"></textarea>
+                <p class="error" data-error-for="q-message" role="alert"></p>
+              </div>
+            </div>
+
+            <!-- honeypot: hidden from people, filled in by bots -->
+            <div class="sr-only" aria-hidden="true">
+              <label for="q-website">Leave this field empty</label>
+              <input type="text" id="q-website" name="_gotcha" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="_source" value="quote">
+
+            <button class="btn btn--primary btn--lg" type="submit" style="margin-top:24px;">
+              Request My Free Quote
+            </button>
+
+            <p class="form-status" data-form-status role="status"></p>
+            <p class="form-note">
+              No obligation, and we never share your details.
+            </p>
+          </form>
+        </div>
+
+        <aside class="side-panel reveal">
+          <h3>What happens next</h3>
+          <ul class="check-list">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span><strong style="color:#fff;">We call you back.</strong> Usually within one business day.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span><strong style="color:#fff;">We talk through the build.</strong> Menu, equipment, layout and the code where you will operate.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span><strong style="color:#fff;">You get a written quote.</strong> Itemised, with a realistic build schedule.</span>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
+              <span><strong style="color:#fff;">Financing, if you want it.</strong> Answers in 24 hours or less.</span>
+            </li>
+          </ul>
+
+          <h3 style="margin-top:32px;">Reach us directly</h3>
+          <ul class="footer-contact">
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+              <a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a>
+            </li>
+            <li>
+              <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
+              <span>Mon &ndash; Fri, 8am &ndash; 5pm ET</span>
+            </li>
+          </ul>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================== TESTIMONIAL -->
+  <section class="section section--alt section--tight">
+    <div class="container">
+      <figure class="testimonial reveal">
+        <div>
+          <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
+          </div>
+          <blockquote>
+            &ldquo;US Food Truck Factory built exactly what we envisioned. The quality,
+            communication, and turnaround time were top notch. Highly recommend!&rdquo;
+          </blockquote>
+          <figcaption><cite>&mdash; Jessica M., Owner of Sweet Streets</cite></figcaption>
+        </div>
+        <div class="testimonial__media">
+          <img src="assets/images/builds/sweet-streets-sm.jpg"
+               alt="Sweet Streets mint green dessert truck built by US Food Truck Factory"
+               loading="lazy" width="900" height="506">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+</main>

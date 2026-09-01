@@ -1,0 +1,18 @@
+# ---------------------------------------------------------------------------
+# Live data. This never leaves the server it was created on.
+#   config.php        holds the admin account (email + bcrypt password hash)
+#   submissions.*     holds every enquiry visitors have sent
+# Committing either of these would publish them, so they stay local. A fresh
+# server creates its own by running admin/setup.php once.
+# ---------------------------------------------------------------------------
+data/config.php
+data/*.sqlite
+data/*.sqlite-journal
+data/*.sqlite-wal
+data/*.sqlite-shm
+
+# Windows / editor noise
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp

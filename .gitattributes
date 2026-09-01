@@ -1,0 +1,11 @@
+# Normalise to LF inside the repository so Windows and the Linux build server
+# see identical files and diffs stay clean.
+* text=auto eol=lf
+
+# The launcher is run by cmd.exe, which wants CRLF.
+*.bat text eol=crlf
+
+# Binary: never touch these.
+*.jpg  binary
+*.png  binary
+*.woff2 binary

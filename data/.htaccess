@@ -1,0 +1,12 @@
+# The SQLite database and the admin config live here. Nothing in this folder
+# may ever be served over HTTP.
+#
+# Apache 2.4
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+# Apache 2.2
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>
