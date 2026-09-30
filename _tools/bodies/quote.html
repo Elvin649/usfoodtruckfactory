@@ -22,13 +22,11 @@
         <div>
           <h2 class="sr-only">Quote request form</h2>
           <!-- Posts to api/submit.php, which stores the enquiry in data/submissions.sqlite.
-               Read them at /admin. The mailto action is the no-JavaScript fallback so the
-               form never posts to a dead URL. Requires PHP hosting; on a static-only host
-               set data-endpoint back to "TODO" and the form reverts to email. -->
+               Read them at /admin. Requires PHP hosting. -->
           <form class="form-card reveal" data-form novalidate
                 data-endpoint="api/submit.php"
-                action="mailto:info@usfoodtruckfactory.com"
-                method="post" enctype="text/plain">
+                action="api/submit.php"
+                method="post">
 
             <div class="form-grid">
               <div class="field">
@@ -52,7 +50,7 @@
               <div class="field">
                 <label for="q-phone">Phone <span class="req" aria-hidden="true">*</span></label>
                 <input type="tel" id="q-phone" name="phone" required autocomplete="tel"
-                       placeholder="(240) 555-0100">
+                       placeholder="+1 (240) 360-0000">
                 <p class="error" data-error-for="q-phone" role="alert"></p>
               </div>
 
@@ -162,7 +160,7 @@
             </li>
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
-              <span><strong style="color:#fff;">You get a written quote.</strong> Itemised, with a realistic build schedule.</span>
+              <span><strong style="color:#fff;">You get a written quote.</strong> Itemized, with a realistic build schedule.</span>
             </li>
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-check"></use></svg>
@@ -173,44 +171,17 @@
           <h3 style="margin-top:32px;">Reach us directly</h3>
           <ul class="footer-contact">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
-              <a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <a href="tel:+12403600000">+1 (240) 360-0000</a>
             </li>
             <li>
               <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
-              <span>Mon &ndash; Fri, 8am &ndash; 5pm ET</span>
+              <span>Mon &ndash; Fri, 9am &ndash; 6pm ET</span>
             </li>
           </ul>
         </aside>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ====================================================== TESTIMONIAL -->
-  <section class="section section--alt section--tight">
-    <div class="container">
-      <figure class="testimonial reveal">
-        <div>
-          <div class="stars" role="img" aria-label="Rated 5 out of 5 stars">
-            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
-            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
-            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
-            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
-            <svg class="icon" aria-hidden="true"><use href="#i-star"></use></svg>
-          </div>
-          <blockquote>
-            &ldquo;US Food Truck Factory built exactly what we envisioned. The quality,
-            communication, and turnaround time were top notch. Highly recommend!&rdquo;
-          </blockquote>
-          <figcaption><cite>&mdash; Jessica M., Owner of Sweet Streets</cite></figcaption>
-        </div>
-        <div class="testimonial__media">
-          <img src="assets/images/builds/sweet-streets-sm.jpg"
-               alt="Sweet Streets mint green dessert truck built by US Food Truck Factory"
-               loading="lazy" width="900" height="506">
-        </div>
-      </figure>
     </div>
   </section>
 

@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contact Us | US Food Truck Factory</title>
 <meta name="description" content="Send us a message. Our team is standing by to answer your questions about custom food trucks, trailers and repairs.">
-<link rel="canonical" href="https://usfoodtruckfactory.com/contact.html">
+<link rel="canonical" href="https://usfoodfactory.com/contact">
 
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="US Food Truck Factory">
 <meta property="og:title" content="Contact Us | US Food Truck Factory">
 <meta property="og:description" content="Send us a message. Our team is standing by to answer your questions about custom food trucks, trailers and repairs.">
-<meta property="og:url" content="https://usfoodtruckfactory.com/contact.html">
-<meta property="og:image" content="https://usfoodtruckfactory.com/assets/images/hero-bbq-truck.jpg">
+<meta property="og:url" content="https://usfoodfactory.com/contact">
+<meta property="og:image" content="https://usfoodfactory.com/assets/images/hero-bbq-truck.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <meta name="theme-color" content="#0E3164">
@@ -50,7 +50,6 @@
         <li><a href="services.html">Services</a></li>
         <li><a href="builds.html">Our Builds</a></li>
         <li><a href="parts.html">Parts</a></li>
-        <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html" aria-current="page">Contact</a></li>
       </ul>
     </nav>
@@ -88,24 +87,17 @@
       <div class="card-grid">
         <div class="info-card reveal">
           <span class="icon-badge">
-            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
           </span>
-          <h3>Email</h3>
-          <p><a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a></p>
-        </div>
-        <div class="info-card reveal">
-          <span class="icon-badge">
-            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
-          </span>
-          <h3>Visit the Shop</h3>
-          <p>12105 Acton Ln<br>Waldorf, MD 20601</p>
+          <h3>Call</h3>
+          <p><a href="tel:+12403600000">+1 (240) 360-0000</a></p>
         </div>
         <div class="info-card reveal">
           <span class="icon-badge">
             <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
           </span>
           <h3>Shop Hours</h3>
-          <p>Mon &ndash; Fri: 8am &ndash; 5pm<br>Sat: by appointment</p>
+          <p>Mon &ndash; Fri: 9am &ndash; 6pm<br>Sat: by appointment</p>
         </div>
       </div>
     </div>
@@ -126,13 +118,11 @@
           </div>
 
           <!-- Posts to api/submit.php, which stores the enquiry in data/submissions.sqlite.
-               Read them at /admin. The mailto action is the no-JavaScript fallback so the
-               form never posts to a dead URL. Requires PHP hosting; on a static-only host
-               set data-endpoint back to "TODO" and the form reverts to email. -->
+               Read them at /admin. Requires PHP hosting. -->
           <form class="form-card reveal" data-form novalidate
                 data-endpoint="api/submit.php"
-                action="mailto:info@usfoodtruckfactory.com"
-                method="post" enctype="text/plain">
+                action="api/submit.php"
+                method="post">
 
             <div class="form-grid">
               <div class="field">
@@ -156,7 +146,7 @@
               <div class="field">
                 <label for="c-phone">Phone</label>
                 <input type="tel" id="c-phone" name="phone" autocomplete="tel"
-                       placeholder="(240) 555-0100">
+                       placeholder="+1 (240) 360-0000">
                 <p class="error" data-error-for="c-phone" role="alert"></p>
               </div>
 
@@ -229,30 +219,13 @@
           <h3 style="margin-top:32px;">Reach us directly</h3>
           <ul class="footer-contact">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
-              <a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
-              <span>12105 Acton Ln, Waldorf, MD 20601</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <a href="tel:+12403600000">+1 (240) 360-0000</a>
             </li>
           </ul>
         </aside>
 
       </div>
-    </div>
-  </section>
-
-  <!-- =========================================================== MAP -->
-  <section class="section section--alt section--tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Find the shop</h2>
-      </div>
-      <iframe class="map-embed reveal"
-              title="Map showing US Food Truck Factory at 12105 Acton Ln, Waldorf, MD 20601"
-              src="https://www.google.com/maps?q=12105+Acton+Ln,+Waldorf,+MD+20601&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
@@ -267,17 +240,13 @@
           <img src="assets/images/logo.png" alt="US Food Truck Factory" width="356" height="160">
         </span>
         <p class="footer-blurb">
-          Custom food trucks, concession trailers, and mobile kitchens&mdash;fabricated
-          in Waldorf, Maryland and delivered nationwide.
+          Custom food trucks, concession trailers, and mobile kitchens built for food
+          businesses nationwide.
         </p>
         <ul class="footer-contact">
           <li>
-            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
-            <span>12105 Acton Ln, Waldorf, MD 20601</span>
-          </li>
-          <li>
-            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
-            <a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+            <a href="tel:+12403600000">+1 (240) 360-0000</a>
           </li>
         </ul>
       </div>
@@ -286,14 +255,12 @@
         <h3>Quick Links</h3>
         <ul class="footer-links">
           <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
           <li><a href="builds.html">Our Builds</a></li>
           <li><a href="services.html">Services</a></li>
           <li><a href="parts.html">Parts</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
-
     </div>
   </div>
   <div class="footer-bottom">

@@ -21,24 +21,17 @@
       <div class="card-grid">
         <div class="info-card reveal">
           <span class="icon-badge">
-            <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
+            <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
           </span>
-          <h3>Email</h3>
-          <p><a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a></p>
-        </div>
-        <div class="info-card reveal">
-          <span class="icon-badge">
-            <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
-          </span>
-          <h3>Visit the Shop</h3>
-          <p>12105 Acton Ln<br>Waldorf, MD 20601</p>
+          <h3>Call</h3>
+          <p><a href="tel:+12403600000">+1 (240) 360-0000</a></p>
         </div>
         <div class="info-card reveal">
           <span class="icon-badge">
             <svg class="icon" aria-hidden="true"><use href="#i-clock"></use></svg>
           </span>
           <h3>Shop Hours</h3>
-          <p>Mon &ndash; Fri: 8am &ndash; 5pm<br>Sat: by appointment</p>
+          <p>Mon &ndash; Fri: 9am &ndash; 6pm<br>Sat: by appointment</p>
         </div>
       </div>
     </div>
@@ -59,13 +52,11 @@
           </div>
 
           <!-- Posts to api/submit.php, which stores the enquiry in data/submissions.sqlite.
-               Read them at /admin. The mailto action is the no-JavaScript fallback so the
-               form never posts to a dead URL. Requires PHP hosting; on a static-only host
-               set data-endpoint back to "TODO" and the form reverts to email. -->
+               Read them at /admin. Requires PHP hosting. -->
           <form class="form-card reveal" data-form novalidate
                 data-endpoint="api/submit.php"
-                action="mailto:info@usfoodtruckfactory.com"
-                method="post" enctype="text/plain">
+                action="api/submit.php"
+                method="post">
 
             <div class="form-grid">
               <div class="field">
@@ -89,7 +80,7 @@
               <div class="field">
                 <label for="c-phone">Phone</label>
                 <input type="tel" id="c-phone" name="phone" autocomplete="tel"
-                       placeholder="(240) 555-0100">
+                       placeholder="+1 (240) 360-0000">
                 <p class="error" data-error-for="c-phone" role="alert"></p>
               </div>
 
@@ -162,30 +153,13 @@
           <h3 style="margin-top:32px;">Reach us directly</h3>
           <ul class="footer-contact">
             <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-mail"></use></svg>
-              <a href="mailto:info@usfoodtruckfactory.com">info@usfoodtruckfactory.com</a>
-            </li>
-            <li>
-              <svg class="icon" aria-hidden="true"><use href="#i-pin"></use></svg>
-              <span>12105 Acton Ln, Waldorf, MD 20601</span>
+              <svg class="icon" aria-hidden="true"><use href="#i-phone"></use></svg>
+              <a href="tel:+12403600000">+1 (240) 360-0000</a>
             </li>
           </ul>
         </aside>
 
       </div>
-    </div>
-  </section>
-
-  <!-- =========================================================== MAP -->
-  <section class="section section--alt section--tight">
-    <div class="container">
-      <div class="section-head reveal">
-        <h2>Find the shop</h2>
-      </div>
-      <iframe class="map-embed reveal"
-              title="Map showing US Food Truck Factory at 12105 Acton Ln, Waldorf, MD 20601"
-              src="https://www.google.com/maps?q=12105+Acton+Ln,+Waldorf,+MD+20601&output=embed"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </section>
 
